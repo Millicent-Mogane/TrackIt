@@ -1,0 +1,44 @@
+﻿@model TrackItApp.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Full Name</label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName" style="color:red"></span>
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" style="color:red"></span>
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input type="password" name="PasswordHash" />
+        <span asp-validation-for="PasswordHash" style="color:red"></span>
+    </div>
+
+    <div>
+        <label>Role</label>
+        <select asp-for="Role">
+            <option value="">-- Select Role --</option>
+            <option>Admin</option>
+            <option>User</option>
+        </select>
+        <span asp-validation-for="Role" style="color:red"></span>
+    </div>
+
+    <button type="submit">Register</button>
+</form>
+
+<p style="color:green">@TempData["Success"]</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
