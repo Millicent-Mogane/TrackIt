@@ -461,3 +461,4 @@ C:\Users\Millicent\Desktop\VSProjects\TrackIt\TrackIt\obj\Debug\net8.0\refint\Tr
 C:\Users\Millicent\Desktop\VSProjects\TrackIt\TrackIt\obj\Debug\net8.0\TrackIt.pdb
 C:\Users\Millicent\Desktop\VSProjects\TrackIt\TrackIt\obj\Debug\net8.0\TrackIt.genruntimeconfig.cache
 C:\Users\Millicent\Desktop\VSProjects\TrackIt\TrackIt\obj\Debug\net8.0\ref\TrackIt.dll
+C:\Users\Millicent\Desktop\VSProjects\TrackIt\TrackIt\obj\Debug\net8.0\TrackIt.sourcelink.json

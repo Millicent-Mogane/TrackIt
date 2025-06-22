@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7rx4j4x53MTsTDsZSY/LJzopZ2lW60HBk4oLmBYMSes=",
+  "Hash": "6Wqhara0Yg4qnjlYVcusBiG7UNQtqLoRnSGag/XjTd8=",
   "Source": "TrackIt",
   "BasePath": "_content/TrackIt",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Millicent\\Desktop\\VSProjects\\TrackIt\\TrackIt\\wwwroot\\images\\TrackItBackground.png",
+      "SourceId": "TrackIt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Millicent\\Desktop\\VSProjects\\TrackIt\\TrackIt\\wwwroot\\",
+      "BasePath": "_content/TrackIt",
+      "RelativePath": "images/TrackItBackground.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\TrackItBackground.png"
     },
     {
       "Identity": "C:\\Users\\Millicent\\Desktop\\VSProjects\\TrackIt\\TrackIt\\wwwroot\\js\\site.js",

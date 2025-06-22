@@ -1,8 +1,25 @@
 ﻿@{
+    // Set the title for the User Dashboard page
     ViewData["Title"] = "User Dashboard";
 }
 
-<h2>Welcome @ViewBag.User!</h2>
+<!-- Main container styled with background overlay from site.css -->
+<div class="main-container">
+    <!-- Welcome message with the user's name -->
+    <h2>Welcome, @ViewBag.User!</h2>
 
-<p>This is the user dashboard.</p>
-<a href="/Account/Logout">Logout</a>
+    <!-- Description for regular user access -->
+    <p>You are logged in as a regular user. Use the options below to manage your tasks and profile.</p>
+
+    <!-- Action buttons for user functionality -->
+    <div style="margin-top: 20px;">
+        <!-- Navigate to view tasks -->
+        <a class="btn btn-primary" href="/Tasks">View Tasks</a>
+
+        <!-- Navigate to update profile -->
+        <a class="btn btn-secondary" href="/Account/Profile" style="margin-left: 10px;">Update Profile</a>
+
+        <!-- Logout button -->
+        <a class="btn btn-danger" href="/Account/Logout" style="margin-left: 10px;">Logout</a>
+    </div>
+</div>

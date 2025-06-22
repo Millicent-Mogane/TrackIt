@@ -1,44 +1,64 @@
 ﻿@model TrackItApp.Models.User
+
 @{
+    // Set the page title shown in the browser tab
     ViewData["Title"] = "Register";
 }
 
-<h2>Register</h2>
+<!-- Container to center content vertically and horizontally -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <!-- Card to hold the registration form -->
+    <div class="card" style="width: 100%; max-width: 500px;">
+        <h2 class="text-center mb-4">Register</h2>
 
-<form asp-action="Register" method="post">
-    <div>
-        <label>Full Name</label>
-        <input asp-for="FullName" />
-        <span asp-validation-for="FullName" style="color:red"></span>
+        <!-- Show success message if TempData["Success"] is set -->
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <!-- Registration form posts to AccountController.Register -->
+        <form asp-action="Register" method="post">
+            <!-- Full Name input -->
+            <div class="form-group">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <!-- Password input (bound to PasswordHash property) -->
+            <div class="form-group">
+                <label asp-for="PasswordHash">Password</label>
+                <input asp-for="PasswordHash" class="form-control" type="password" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
+
+            <!-- Role selection dropdown -->
+            <div class="form-group">
+                <label asp-for="Role"></label>
+                <select asp-for="Role" class="form-control">
+                    <option value="">Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Tester">Tester</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary w-100 mt-3">Register</button>
+
+            <!-- Link to login page -->
+            <div class="text-center mt-3">
+                <a asp-action="Login">Already have an account? Login</a>
+            </div>
+        </form>
     </div>
-
-    <div>
-        <label>Email</label>
-        <input asp-for="Email" />
-        <span asp-validation-for="Email" style="color:red"></span>
-    </div>
-
-    <div>
-        <label>Password</label>
-        <input type="password" name="PasswordHash" />
-        <span asp-validation-for="PasswordHash" style="color:red"></span>
-    </div>
-
-    <div>
-        <label>Role</label>
-        <select asp-for="Role">
-            <option value="">-- Select Role --</option>
-            <option>Admin</option>
-            <option>User</option>
-        </select>
-        <span asp-validation-for="Role" style="color:red"></span>
-    </div>
-
-    <button type="submit">Register</button>
-</form>
-
-<p style="color:green">@TempData["Success"]</p>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+</div>

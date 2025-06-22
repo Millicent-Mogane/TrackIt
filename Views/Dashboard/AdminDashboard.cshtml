@@ -1,8 +1,42 @@
 ﻿@{
+    // Set the page title for browser/tab
     ViewData["Title"] = "Admin Dashboard";
 }
 
-<h2>Welcome Admin @ViewBag.User!</h2>
+<!-- Main content container with background and padding -->
+<div class="main-container">
+    <!-- Welcome message using the logged-in admin's name -->
+    <h2>Welcome, Admin @ViewBag.User!</h2>
 
-<p>This is the admin dashboard.</p>
-<a href="/Account/Logout">Logout</a>
+    <!-- Description of the dashboard -->
+    <p class="lead">This is your admin dashboard where you can manage users, tasks, and view reports.</p>
+
+    <!-- Action buttons for admin functions -->
+    <div class="dashboard-actions">
+        <a href="/UserManagement" class="btn btn-primary">Manage Users</a>
+        <a href="/TaskManagement" class="btn btn-primary">Manage Tasks</a>
+        <a href="/Reports" class="btn btn-primary">View Reports</a>
+    </div>
+
+    <!-- Logout button -->
+    <div style="margin-top: 20px;">
+        <a href="/Account/Logout" class="btn btn-secondary">Logout</a>
+    </div>
+</div>
+
+<!-- Dashboard-specific styles -->
+<style>
+    /* Style for the button container */
+    .dashboard-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+        /* Make each button expand equally and have a minimum width */
+        .dashboard-actions .btn {
+            flex: 1;
+            min-width: 200px;
+        }
+</style>

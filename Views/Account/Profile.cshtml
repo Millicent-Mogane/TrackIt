@@ -1,51 +1,66 @@
 ﻿@model TrackItApp.Models.ChangePasswordViewModel
 
 @{
+    // Set the page title shown in the browser tab
     ViewData["Title"] = "Profile";
 }
 
-<h2>Your Profile</h2>
+<!-- Main container centered vertically and horizontally -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <!-- Card to hold profile and password form -->
+    <div class="card" style="width: 100%; max-width: 600px;">
+        <!-- Profile heading -->
+        <h2 class="text-center mb-4">My Profile</h2>
 
-<table>
-    <tr>
-        <td><strong>Name:</strong></td>
-        <td>@ViewBag.Name</td>
-    </tr>
-    <tr>
-        <td><strong>Email:</strong></td>
-        <td>@ViewBag.Email</td>
-    </tr>
-    <tr>
-        <td><strong>Role:</strong></td>
-        <td>@ViewBag.Role</td>
-    </tr>
-</table>
+        <!-- Display user profile information -->
+        <div class="mb-3">
+            <strong>Full Name:</strong> @ViewBag.FullName <br />
+            <strong>Email:</strong> @ViewBag.Email <br />
+            <strong>Role:</strong> @ViewBag.Role
+        </div>
 
-<hr />
+        <hr />
 
-<h3>Change Password</h3>
+        <!-- Section to change the user's password -->
+        <h4 class="mb-3">Change Password</h4>
 
-<form asp-action="ChangePassword" method="post">
-    <div>
-        <label>Old Password</label>
-        <input asp-for="OldPassword" type="password" />
+        <!-- Show error message if password change fails -->
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <!-- Show success message when password is updated -->
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">@ViewBag.Message</div>
+        }
+
+        <!-- Form to update password, posts to AccountController.ChangePassword -->
+        <form asp-action="ChangePassword" method="post">
+            <!-- Old password input -->
+            <div class="form-group">
+                <label asp-for="OldPassword"></label>
+                <input asp-for="OldPassword" class="form-control" type="password" />
+                <span asp-validation-for="OldPassword" class="text-danger"></span>
+            </div>
+
+            <!-- New password input -->
+            <div class="form-group">
+                <label asp-for="NewPassword"></label>
+                <input asp-for="NewPassword" class="form-control" type="password" />
+                <span asp-validation-for="NewPassword" class="text-danger"></span>
+            </div>
+
+            <!-- Confirm new password input -->
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary w-100 mt-3">Update Password</button>
+        </form>
     </div>
-    <div>
-        <label>New Password</label>
-        <input asp-for="NewPassword" type="password" />
-    </div>
-    <div>
-        <label>Confirm New Password</label>
-        <input asp-for="ConfirmPassword" type="password" />
-    </div>
-    <button type="submit">Change Password</button>
-</form>
-
-@if (ViewBag.Message != null)
-{
-    <p style="color: green">@ViewBag.Message</p>
-}
-@if (ViewBag.Error != null)
-{
-    <p style="color: red">@ViewBag.Error</p>
-}
+</div>

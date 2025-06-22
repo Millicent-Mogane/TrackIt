@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Millicent\\Desktop\\VSProjects\\TrackIt\\TrackIt\\wwwroot\\images\\TrackItBackground.png",
+      "PackagePath": "staticwebassets\\images\\TrackItBackground.png"
+    },
+    {
       "Id": "C:\\Users\\Millicent\\Desktop\\VSProjects\\TrackIt\\TrackIt\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
